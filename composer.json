@@ -1,0 +1,25 @@
+{
+    "name": "jtsternberg/cmb2-related-links",
+    "description": "Custom field for CMB2 which adds a releated links repeatable group field.",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "jtsternberg",
+            "email": "justin@dsgnwrks.pro",
+            "homepage": "http://dsgnwrks.pro/",
+            "role": "Developer"
+        }
+    ],
+    "keywords": ["wordpress", "cmb2", "meta"],
+    "homepage": "https://github.com/jtsternberg/CMB2-Related-Links",
+    "support": {
+        "issues": "https://github.com/jtsternberg/CMB2-Related-Links/issues",
+        "source": "https://github.com/jtsternberg/CMB2-Related-Links"
+    },
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload": {
+        "files": ["cmb2-related-links.php"]
+    }
+}
