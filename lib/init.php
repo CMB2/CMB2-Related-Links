@@ -42,7 +42,7 @@ class CMB2_Related_Links {
 	 */
 	protected function __construct() {
 		add_action( is_admin() ? 'admin_footer' : 'wp_footer', array( __CLASS__, 'footer_js' ) );
-		add_action( 'wp_ajax_cmb2_related_links_get_post_data', array( $this, 'get_post_data' ) );
+		add_action( 'wp_ajax_cmb2_related_links_get_post_data', array( __CLASS__, 'get_post_data' ) );
 	}
 
 	public function field( $args = array(), $l10n_strings = array() ) {
@@ -242,7 +242,7 @@ class CMB2_Related_Links {
 			function get_post_data( post_id, $object ) {
 				window.relatedlinkdebug('post_id',post_id);
 				$.post( ajaxurl, {
-					action : 'gcs_get_post_data',
+					action : 'cmb2_related_links_get_post_data',
 					ajaxurl : ajaxurl,
 					post_id : post_id
 				}, function( response ) {
@@ -262,7 +262,7 @@ class CMB2_Related_Links {
 				if ( window.cmb2_post_search ) {
 					// once a post is selected...
 					window.cmb2_post_search.handleSelected = function( checked ) {
-						window.relatedlinkdebug('window.cmb2_post_search.handleSelected OVERRIDE');
+						window.relatedlinkdebug( 'cmb2_post_search.handleSelected OVERRIDE', '<?php echo __CLASS__; ?>' );
 
 						if ( this.$idInput.hasClass( 'post-search-data' ) ) {
 
@@ -288,7 +288,7 @@ class CMB2_Related_Links {
 	/**
 	 * Ajax handler for fetching title/url for a post
 	 */
-	public function get_post_data() {
+	public static function get_post_data() {
 		if ( isset( $_POST['post_id'] ) ) {
 			$post = get_post( absint( $_POST['post_id'] ) );
 
