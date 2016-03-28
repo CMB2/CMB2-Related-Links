@@ -1,4 +1,4 @@
-# CMB2-User-Select
+# CMB2 Related Links
 
 Special CMB2 Field that allows users to add a related links repeating field group. This is not a standard field type, but instead a function you use in combination with `CMB2::add_field()`.
 
