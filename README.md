@@ -1,8 +1,10 @@
 # CMB2 Related Links
 
-Special CMB2 Field that allows users to add a related links repeating field group. This is not a standard field type, but instead a function you use in combination with `CMB2::add_field()`.
+Special CMB2 Field that allows users to add a related links repeating field group. This is not a standard field type, but instead a function you use in combination with `CMB2::add_field()`. Each link can be populated with existing WordPress content by clicking on the search button.
 
 The only required parameter is the `'id'` parameter, though you can override almost all of the arguments by passing them in.
+
+This field requires the [CMB2 Post Search field](https://github.com/WebDevStudios/CMB2-Post-Search-field).
 
 ### Example
 ```php
