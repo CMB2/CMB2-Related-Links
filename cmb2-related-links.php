@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: CMB2 Related Links Field
- * Plugin URI: http://webdevstudios.com
+ * Plugin URI: https://github.com/jtsternberg/cmb2-related-links
  * Description: Custom field for CMB2 which adds a releated links repeatable group field.
  * Author: Justin Sternberg
  * Author URI: http://dsgnwrks.pro
