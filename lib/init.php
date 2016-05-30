@@ -148,72 +148,7 @@ class CMB2_Related_Links {
 		ob_start();
 		?>
 		<style type="text/css" media="screen">
-		.cmb2-related-links-wrap input {
-			width: 100%;
-		}
-		.cmb2-related-links-wrap .cmb-th+.cmb-td {
-			width: 100%;
-		}
-		.cmb2-related-links-wrap .cmb-add-row {
-			margin: 1em 0 0;
-		}
-		.cmb2-related-links-wrap .cmb-add-row .dashicons-plus {
-			line-height: 1.5em;
-		}
-		.cmb2-related-links-wrap:after {
-			content: '';
-			display: block;
-			clear: both;
-			width: 100%;
-		}
-		#side-sortables .cmb2-related-links-wrap .cmb-remove-row {
-			padding-top: 0;
-		}
-		#side-sortables .cmb2-related-links-wrap .cmb-th,
-		.cmb2-related-links-wrap .cmb-repeat-group-field,
-		.cmb2-related-links-wrap .cmb-td .cmb-td
-		{
-			padding: 0;
-		}
-		#side-sortables .cmb2-related-links-wrap .cmb-th label {
-			padding: 0;
-		}
-		#side-sortables .cmb2-related-links-wrap .cmb-th label:after {
-			border: 0;
-		}
-
-		.cmb2-related-links-wrap .cmb-row.cmb-type-post-search-text {
-			border-bottom: 0;
-		}
-		.cmb2-related-links-wrap .cmb2-post-search-button {
-			margin-top: -26px;
-			float: right;
-			position: relative;
-			background-color: white;
-			right: 3px;
-		}
-		.cmb2-related-links-wrap .cmb-row .cmb-row .cmb-row {
-			border-bottom: 0;
-			margin-bottom: 0;
-		}
-		.cmb2-related-links-wrap .cmb-row .cmb2-metabox-description {
-			padding-bottom: 0;
-			padding-bottom: 0;
-		}
-		.cmb2-related-links-wrap .cmb-remove-field-row {
-			padding-top: 0;
-			padding-bottom: 2px;
-		}
-		.cmb2-related-links-wrap .cmb-remove-group-row.alignright {
-			line-height: 1em;
-			color: #a00;
-		}
-		.cmb2-related-links-wrap .cmb-remove-group-row.alignright:hover {
-			color: red;
-		}
-		.cmb2-related-links-wrap .cmb-remove-row {
-			position: relative;
-		}
+			<?php include_once( 'style.css' ); ?>
 		</style>
 		<?php
 		return ob_get_clean();
@@ -228,59 +163,9 @@ class CMB2_Related_Links {
 		}
 		?>
 		<script type="text/javascript">
-		jQuery(document).ready(function($){
 			var debug = <?php echo defined( 'WP_DEBUG' ) && WP_DEBUG ? '1' : '0'; ?>;
-
-			window.relatedlinkdebug = function() {
-				window.relatedlinkdebug.history = window.relatedlinkdebug.history || [];
-				window.relatedlinkdebug.history.push( arguments );
-				if ( window.console && debug ) {
-					window.console.log( Array.prototype.slice.call(arguments) );
-				}
-			};
-
-			function get_post_data( post_id, $object ) {
-				window.relatedlinkdebug('post_id',post_id);
-				$.post( ajaxurl, {
-					action : 'cmb2_related_links_get_post_data',
-					ajaxurl : ajaxurl,
-					post_id : post_id
-				}, function( response ) {
-					window.relatedlinkdebug('response',response);
-					if ( response.success && response.data.url ) {
-						// update the url w/ the post permalink
-						$object.val( response.data.url );
-						// update the title w/ the post title
-						var id = $object.attr( 'id' ).replace( '_url', '_title' );
-						$( document.getElementById( id ) ).val( response.data.title );
-					}
-				})
-			}
-
-			// Make sure window.cmb2_post_search is around
-			setTimeout( function() {
-				if ( window.cmb2_post_search ) {
-					// once a post is selected...
-					window.cmb2_post_search.handleSelected = function( checked ) {
-						window.relatedlinkdebug( 'cmb2_post_search.handleSelected OVERRIDE', '<?php echo __CLASS__; ?>' );
-
-						if ( this.$idInput.hasClass( 'post-search-data' ) ) {
-
-							// ajax-grab the data we need
-							get_post_data( checked[0], this.$idInput );
-
-						} else {
-							// Make sure things work as normal for other fields.
-							var existing = this.$idInput.val();
-							existing = existing ? existing + ', ' : '';
-							this.$idInput.val( existing + checked.join( ', ' ) );
-						}
-
-						this.close();
-					};
-				}
-			}, 500 );
-		});
+			var phpClass = '<?php echo __CLASS__; ?>';
+			<?php include_once( 'script.js' ); ?>
 		</script>
 		<?php
 	}
