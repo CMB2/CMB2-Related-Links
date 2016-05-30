@@ -8,7 +8,7 @@
  * @package  CMB2_Related_Links
  * @author   Justin Sternberg <justin@dsgnwrks.pro>
  * @license  GPL-2.0+
- * @version  0.1.0
+ * @version  0.1.1
  * @link     https://github.com/jtsternberg/CMB2-Related-Links
  * @since    0.1.0
  */

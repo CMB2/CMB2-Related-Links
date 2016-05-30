@@ -5,7 +5,7 @@
  * Description: Custom field for CMB2 which adds a releated links repeatable group field.
  * Author: Justin Sternberg
  * Author URI: http://dsgnwrks.pro
- * Version: 0.1.0
+ * Version: 0.1.1
  * License: GPLv2
  */
 
@@ -19,7 +19,7 @@
  * @author    Justin Sternberg <justin@dsgnwrks.pro>
  * @copyright 2016 Justin Sternberg <justin@dsgnwrks.pro>
  * @license   GPL-2.0+
- * @version   0.1.0
+ * @version   0.1.1
  * @link      https://github.com/jtsternberg/CMB2-Related-Links
  * @since     0.1.0
  */
@@ -46,7 +46,7 @@
  * Loader versioning: http://jtsternberg.github.io/wp-lib-loader/
  */
 
-if ( ! class_exists( 'CMB2_Related_Links_010', false ) ) {
+if ( ! class_exists( 'CMB2_Related_Links_011', false ) ) {
 
 	/**
 	 * Versioned loader class-name
@@ -57,18 +57,18 @@ if ( ! class_exists( 'CMB2_Related_Links_010', false ) ) {
 	 * @package  CMB2_Related_Links
 	 * @author   Justin Sternberg <justin@dsgnwrks.pro>
 	 * @license  GPL-2.0+
-	 * @version  0.1.0
+	 * @version  0.1.1
 	 * @link     https://github.com/jtsternberg/CMB2-Related-Links
 	 * @since    0.1.0
 	 */
-	class CMB2_Related_Links_010 {
+	class CMB2_Related_Links_011 {
 
 		/**
 		 * CMB2_Related_Links version number
 		 * @var   string
 		 * @since 0.1.0
 		 */
-		const VERSION = '0.1.0';
+		const VERSION = '0.1.1';
 
 		/**
 		 * Current version hook priority.
@@ -77,7 +77,7 @@ if ( ! class_exists( 'CMB2_Related_Links_010', false ) ) {
 		 * @var   int
 		 * @since 0.1.0
 		 */
-		const PRIORITY = 9999;
+		const PRIORITY = 9998;
 
 		/**
 		 * Starts the version checking process.
@@ -161,5 +161,5 @@ if ( ! class_exists( 'CMB2_Related_Links_010', false ) ) {
 	}
 
 	// Kick it off.
-	new CMB2_Related_Links_010;
+	new CMB2_Related_Links_011;
 }
